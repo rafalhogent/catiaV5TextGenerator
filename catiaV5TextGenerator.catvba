@@ -1,0 +1,778 @@
+Public ck, st, sr, P As Double
+   Public step As Double
+   Public size, padding  As Double
+   Public sketch1 As Sketch
+   Public factory2D1 As Factory2D
+   Public j As Integer
+   
+   Const pi = 3.14159265359
+   
+   
+   Sub CATMain()
+   
+   
+   ' ----- WorkbenchCheck -----
+   If CATIA.GetWorkbenchId <> "CS0WKS" Then
+   MsgBox "Macro werkt enkel in Sketch Workbench"
+   End
+   End If
+   ' ---------------------------
+   
+   Dim Text As Variant
+   Text = InputBox("enter text")
+   
+   size = Val(InputBox("enter size"))
+   
+   
+   step = 120
+   padding = 35
+   
+   ck = size / 100
+   P = padding * size / 100
+   
+   
+   
+   
+   
+   Set sketch1 = CATIA.ActiveDocument.part.InWorkObject
+   Set factory2D1 = sketch1.Factory2D
+   
+   
+   Text = UCase(Text)
+   
+   st = P
+   For j = 1 To Len(Text)
+   
+   Dim g As String
+   g = Mid(Text, j, 1)
+   
+     Select Case g
+       Case "A"
+         A
+       Case "B"
+         B
+       Case "C"
+         C
+       Case "D"
+         D
+       Case "E"
+         E
+       Case "F"
+         F
+       Case "G"
+         gie
+       Case "H"
+         H
+       Case "I"
+         i
+       Case "J"
+         Jot
+       Case "K"
+         K
+       Case "L"
+         L
+       Case "M"
+         M
+         
+       Case "N"
+         n
+       Case "O"
+         O
+       Case "P"
+         Pe
+       Case "Q"
+         Q
+       Case "R"
+        R
+       Case "S"
+         S
+       Case "T"
+         T
+       Case "U"
+         U
+       Case "V"
+         V
+       Case "W"
+         W
+       Case "X"
+         X
+       Case "Y"
+         Y
+       Case "Z"
+         Z
+         
+         
+       Case "0"
+       n0
+        Case "1"
+       n1
+        Case "2"
+       n2
+        Case "3"
+       n3
+        Case "4"
+       n4
+        Case "5"
+       n5
+        Case "6"
+       n6
+        Case "7"
+       n7
+        Case "8"
+       n8
+        Case "9"
+       n9
+        Case " "
+       spatie
+        Case "-"
+       minus
+       
+       
+       
+       Case Else
+       
+       End Select
+   
+   
+   Next j
+   
+   
+   
+   End Sub
+   
+   
+   Sub spatie()
+   
+   sr = 44 * size / 100
+   
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   
+   Sub minus()
+   
+   sr = 22 * size / 100
+   Dim line2D1 As Line2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 56 * ck, 22 * ck + st, 56 * ck)
+   
+   st = st + sr + P
+   
+   
+   End Sub
+   
+   Sub n9()
+   
+   sr = 44 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set circle2D1 = factory2D1.CreateCircle(-4 * ck + st, 44 * ck, 48 * ck, -1.1594, 0)
+   Set line2D1 = factory2D1.CreateLine(44 * ck + st, 44 * ck, 44 * ck + st, 78 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(22 * ck + st, 78 * ck, 22 * ck, 0, 1 * pi)
+   Set line2D1 = factory2D1.CreateLine(st, 78 * ck, st, 66 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(22 * ck + st, 66 * ck, 22 * ck, pi, 1.5 * pi)
+   Set line2D1 = factory2D1.CreateLine(22 * ck + st, 44 * ck, 44 * ck + st, 44 * ck)
+   
+   
+   
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub n8()
+   
+   sr = 44 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set circle2D1 = factory2D1.CreateCircle(22 * ck + st, 78 * ck, 22 * ck, -0.48 * pi, 1.48 * pi)
+   Set circle2D1 = factory2D1.CreateCircle(22 * ck + st, 34 * ck, 22 * ck, 0, 1 * pi)
+   Set line2D1 = factory2D1.CreateLine(st, 34 * ck, st, 22 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(22 * ck + st, 22 * ck, 22 * ck, 1 * pi, 2 * pi)
+   Set line2D1 = factory2D1.CreateLine(ck * 44 + st, 22 * ck, 44 * ck + st, 34 * ck)
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   
+   
+   
+   
+   Sub n7()
+   
+   sr = 44 * size / 100
+   Dim line2D1 As Line2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 100 * ck, 44 * ck + st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(44 * ck + st, 100 * ck, 20 * ck + st, 0)
+   
+   st = st + sr + P
+   
+   
+   End Sub
+   
+   
+   Sub n6()
+   
+   sr = 44 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 56 * ck, 22 * ck + st, 56 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(22 * ck + st, 34 * ck, 22 * ck, 0, 0.5 * pi)
+   Set line2D1 = factory2D1.CreateLine(44 * ck + st, 34 * ck, 44 * ck + st, 22 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(22 * ck + st, 22 * ck, 22 * ck, -pi, 0)
+   Set line2D1 = factory2D1.CreateLine(st, 22 * ck, st, 56 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(48 * ck + st, 56 * ck, 48 * ck, 1.9, -pi)
+   
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub n5()
+   
+   sr = 42 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 0, 20 * ck + st, 0)
+   Set circle2D1 = factory2D1.CreateCircle(20 * ck + st, 22 * ck, 22 * ck, -0.5 * pi, 0 * pi)
+   Set line2D1 = factory2D1.CreateLine(42 * ck + st, 22 * ck, 42 * ck + st, 34 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(20 * ck + st, 34 * ck, 22 * ck, 0, 0.5 * pi)
+   Set line2D1 = factory2D1.CreateLine(20 * ck + st, 56 * ck, st, 56 * ck)
+   Set line2D1 = factory2D1.CreateLine(st, 56 * ck, st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(st, 100 * ck, 42 * ck + st, 100 * ck)
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub n4()
+   
+   sr = 54 * size / 100
+   Dim line2D1 As Line2D
+   
+   Set line2D1 = factory2D1.CreateLine(38 * ck + st, 0, 38 * ck + st, 44 * ck)
+   Set line2D1 = factory2D1.CreateLine(54 * ck + st, 24 * ck, st, 24 * ck)
+   Set line2D1 = factory2D1.CreateLine(st, 24 * ck, 22 * ck + st, 100 * ck)
+   
+   st = st + sr + P
+   
+   
+   End Sub
+   
+   Sub n3()
+   
+   sr = 42 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 0, 20 * ck + st, 0)
+   Set circle2D1 = factory2D1.CreateCircle(20 * ck + st, 22 * ck, 22 * ck, -0.5 * pi, 0 * pi)
+   Set line2D1 = factory2D1.CreateLine(42 * ck + st, 22 * ck, 42 * ck + st, 34 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(20 * ck + st, 34 * ck, 22 * ck, 0, 0.5 * pi)
+   Set line2D1 = factory2D1.CreateLine(20 * ck + st, 56 * ck, st, 56 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(20 * ck + st, 78 * ck, 22 * ck, -0.5 * pi, 0.5 * pi)
+   Set line2D1 = factory2D1.CreateLine(20 * ck + st, 100 * ck, st, 100 * ck)
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub n2()
+   
+   sr = 44 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(44 * ck + st, 0, st, 0)
+   Set line2D1 = factory2D1.CreateLine(st, 0, 40.758 * ck + st, 66.504 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(22 * ck + st, 78 * ck, 22 * ck, -0.5497, 2.8269)
+   
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   
+   Sub n0()
+   sr = 52 * size / 100
+   
+   Dim ellipse2D1 As Ellipse2D
+   Set ellipse2D1 = factory2D1.CreateClosedEllipse(26 * ck + st, 50 * ck, 0, -50 * ck, 50 * ck, 26 * ck)
+   
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub n1()
+   
+   sr = 20 * size / 100
+   Dim line2D1 As Line2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 80 * ck, 20 * ck + st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(20 * ck + st, 100 * ck, 20 * ck + st, 0)
+   
+   st = st + sr + P
+   
+   
+   End Sub
+   
+   
+   
+   
+   
+   
+   Sub A()
+   
+   sr = 68 * size / 100
+   Dim line2D1 As Line2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 0, 34 * ck + st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(34 * ck + st, 100 * ck, 68 * ck + st, 0)
+   Set line2D1 = factory2D1.CreateLine(9.9 * ck + st, 28.5 * ck, 58 * ck + st, 28.5 * ck)
+   
+   st = st + sr + P
+   
+   
+   End Sub
+   
+   
+   
+   
+   
+   Sub B()
+   
+   sr = 55 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 0, st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(st, 100 * ck, 27 * ck + st, 100 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(27 * ck + st, 78 * ck, 22 * ck, -0.5 * pi, 0.5 * pi)
+   Set line2D1 = factory2D1.CreateLine(27 * ck + st, 56 * ck, st, 56 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(27 * ck + st, 28 * ck, 28 * ck, -0.5 * pi, 0.5 * pi)
+   Set line2D1 = factory2D1.CreateLine(27 * ck + st, 0, st, 0)
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   
+   Sub C()
+   
+   sr = 40 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(40 * ck + st, 0, 20 * ck + st, 0)
+   Set circle2D1 = factory2D1.CreateCircle(20 * ck + st, 20 * ck, 20 * ck, -1 * pi, -0.5 * pi)
+   
+   
+   Set line2D1 = factory2D1.CreateLine(st, 20 * ck, st, 80 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(20 * ck + st, 80 * ck, 20 * ck, 0.5 * pi, 1 * pi)
+   Set line2D1 = factory2D1.CreateLine(20 * ck + st, 100 * ck, 40 * ck + st, 100 * ck)
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub D()
+   
+   sr = 54 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 0, 34 * ck + st, 0)
+   Set circle2D1 = factory2D1.CreateCircle(34 * ck + st, 20 * ck, 20 * ck, -0.5 * pi, 0 * pi)
+   
+   
+   Set line2D1 = factory2D1.CreateLine(54 * ck + st, 20 * ck, 54 * ck + st, 80 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(34 * ck + st, 80 * ck, 20 * ck, 0 * pi, 0.5 * pi)
+   Set line2D1 = factory2D1.CreateLine(34 * ck + st, 100 * ck, st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(st, 100 * ck, st, 0)
+   
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub E()
+   
+   sr = 44 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 0, st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(st, 100 * ck, 44 * ck + st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(27 * ck + st, 56 * ck, st, 56 * ck)
+   Set line2D1 = factory2D1.CreateLine(44 * ck + st, 0, st, 0)
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub F()
+   
+   sr = 44 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 0, st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(st, 100 * ck, 44 * ck + st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(27 * ck + st, 56 * ck, st, 56 * ck)
+   'Set line2D1 = factory2D1.CreateLine(44 * ck + st, 0, st, 0)
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   
+   Sub gie()
+   
+   sr = 54 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(st + 54 * ck, 100 * ck, 20 * ck + st, 100 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(20 * ck + st, 80 * ck, 20 * ck, 0.5 * pi, 1 * pi)
+   Set line2D1 = factory2D1.CreateLine(st, 80 * ck, st, 20 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(20 * ck + st, 20 * ck, 20 * ck, 1 * pi, 1.5 * pi)
+   
+   
+   Set line2D1 = factory2D1.CreateLine(20 * ck + st, 0 * ck, 54 * ck + st, 0 * ck)
+   Set line2D1 = factory2D1.CreateLine(54 * ck + st, 0 * ck, 54 * ck + st, 56 * ck)
+   Set line2D1 = factory2D1.CreateLine(54 * ck + st, 56 * ck, 38 * ck + st, 56 * ck)
+   
+   st = st + sr + P
+   
+   
+   End Sub
+   
+   Sub H()
+   
+   sr = 56 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 0, st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(st, 56 * ck, 56 * ck + st, 56 * ck)
+   Set line2D1 = factory2D1.CreateLine(56 * ck + st, 0, 56 * ck + st, 100 * ck)
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub i()
+   
+   sr = 10 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 0, st, 100 * ck)
+   
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   
+   Sub Jot()
+   sr = 32 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 0, 10 * ck + st, 0 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(10 * ck + st, 22 * ck, 22 * ck, 1.5 * pi, 2 * pi)
+   
+   
+   Set line2D1 = factory2D1.CreateLine(32 * ck + st, 22 * ck, 32 * ck + st, 100 * ck)
+   
+   
+   
+   st = st + sr + P
+   End Sub
+   
+   Sub K()
+   
+   sr = 56 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 0, st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(st, 41 * ck, 56 * ck + st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(21 * ck + st, 63 * ck, 56 * ck + st, 0 * ck)
+   
+   
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub L()
+   
+   sr = 44 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 0, st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(st, 0, 44 * ck + st, 0 * ck)
+   
+   
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   
+   Sub M()
+   
+   sr = 66 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(0 + st, 0, 0 + st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(0.05 + st, 100 * ck, 32.95 * ck + st, 46 * ck)
+   Set line2D1 = factory2D1.CreateLine(33.05 * ck + st, 46 * ck, 65.95 * ck + st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(66 * ck + st, 100 * ck, 66 * ck + st, 0)
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   
+   
+   
+   Sub n()
+   
+   sr = 56 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(0 + st, 0, 0 + st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(0.05 * ck + st, 100 * ck, 55.95 * ck + st, 0)
+   Set line2D1 = factory2D1.CreateLine(56 * ck + st, 0, 56 * ck + st, 100 * ck)
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   
+   Sub O()
+   
+   sr = 56 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set circle2D1 = factory2D1.CreateCircle(28 * ck + st, 72 * ck, 28 * ck, 0 * pi, 1 * pi)
+   Set line2D1 = factory2D1.CreateLine(0 * ck + st, 72 * ck, 0 * ck + st, 28 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(28 * ck + st, 28 * ck, 28 * ck, 1 * pi, 2 * pi)
+   Set line2D1 = factory2D1.CreateLine(56 * ck + st, 28 * ck, 56 * ck + st, 72 * ck)
+   
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   
+   Sub Pe()
+   
+   sr = 56 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(0 * ck + st, 0 * ck, 0 * ck + st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(0 * ck + st, 100 * ck, 28 * ck + st, 100 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(28 * ck + st, 72 * ck, 28 * ck, 1.5 * pi, 2.5 * pi)
+   Set line2D1 = factory2D1.CreateLine(28 * ck + st, 44 * ck, 0 * ck + st, 44 * ck)
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub Q()
+   
+   sr = 56 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set circle2D1 = factory2D1.CreateCircle(28 * ck + st, 72 * ck, 28 * ck, 0 * pi, 1 * pi)
+   Set line2D1 = factory2D1.CreateLine(0 * ck + st, 72 * ck, 0 * ck + st, 28 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(28 * ck + st, 28 * ck, 28 * ck, 1 * pi, 2 * pi)
+   Set line2D1 = factory2D1.CreateLine(56 * ck + st, 28 * ck, 56 * ck + st, 72 * ck)
+   Set line2D1 = factory2D1.CreateLine(46 * ck + st, 18 * ck, 56 * ck + st, 0 * ck)
+   
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub R()
+   
+   sr = 56 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(0 * ck + st, 0 * ck, 0 * ck + st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(0 * ck + st, 100 * ck, 28 * ck + st, 100 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(28 * ck + st, 72 * ck, 28 * ck, 1.5 * pi, 2.5 * pi)
+   Set line2D1 = factory2D1.CreateLine(28 * ck + st, 44 * ck, 0 * ck + st, 44 * ck)
+   Set line2D1 = factory2D1.CreateLine(28 * ck + st, 44 * ck, 56 * ck + st, 0 * ck)
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub S()
+   
+   sr = 56 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set circle2D1 = factory2D1.CreateCircle(34 * ck + st, 56 * ck, 56 * ck, 4.045, 1.5 * pi)
+   Set circle2D1 = factory2D1.CreateCircle(34 * ck + st, 22 * ck, 22 * ck, 1.5 * pi, 1.08)
+   Set line2D1 = factory2D1.CreateLine(44.288 * ck + st, 41.446 * ck, 11.711 * ck + st, 58 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(22 * ck + st, 77.446 * ck, 22 * ck, 1.391, 4.2257)
+   Set circle2D1 = factory2D1.CreateCircle(15.921 * ck + st, 43.994 * ck, 56 * ck, 1.022, 1.391)
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub T()
+   
+   sr = 54 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(0 + st, 100 * ck, 54 * ck + st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(27 * ck + st, 100 * ck, 27 * ck + st, 0)
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub U()
+   
+   sr = 56 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(0 * ck + st, 100 * ck, 0 * ck + st, 28 * ck)
+   Set circle2D1 = factory2D1.CreateCircle(28 * ck + st, 28 * ck, 28 * ck, 1 * pi, 2 * pi)
+   Set line2D1 = factory2D1.CreateLine(56 * ck + st, 28 * ck, 56 * ck + st, 100 * ck)
+   
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub V()
+   
+   sr = 66 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(0 + st, 100 * ck, 32.95 * ck + st, 0)
+   Set line2D1 = factory2D1.CreateLine(33.05 * ck + st, 0, 66 * ck + st, 100 * ck)
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub W()
+   
+   sr = 90 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 100 * ck, 24 * ck + st, 0)
+   Set line2D1 = factory2D1.CreateLine(24.05 * ck + st, 0, 45 * ck + st, 62 * ck)
+   Set line2D1 = factory2D1.CreateLine(45.05 * ck + st, 62 * ck, 66 * ck + st, 0)
+   Set line2D1 = factory2D1.CreateLine(66.05 * ck + st, 0, 90 * ck + st, 100 * ck)
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub X()
+   
+   sr = 66 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 100 * ck, 66 * ck + st, 0)
+   Set line2D1 = factory2D1.CreateLine(st, 0 * ck, 66 * ck + st, 100 * ck)
+   
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub Y()
+   
+   sr = 66 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 100 * ck, 33 * ck + st, 50 * ck)
+   Set line2D1 = factory2D1.CreateLine(st + 33 * ck, 50 * ck, 66 * ck + st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(st + 33 * ck, 0 * ck, 33 * ck + st, 50 * ck)
+   
+   
+   st = st + sr + P
+   
+   End Sub
+   
+   Sub Z()
+   
+   sr = 56 * size / 100
+   
+   Dim line2D1 As Line2D
+   Dim circle2D1 As Circle2D
+   
+   Set line2D1 = factory2D1.CreateLine(st, 100 * ck, 56 * ck + st, 100 * ck)
+   Set line2D1 = factory2D1.CreateLine(st + 56 * ck, 100 * ck, 0 * ck + st, 0 * ck)
+   Set line2D1 = factory2D1.CreateLine(st + 0 * ck, 0 * ck, 56 * ck + st, 0 * ck)
+   
+   
+   st = st + sr + P
+   
+   End Sub
